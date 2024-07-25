@@ -1,0 +1,6 @@
+SERVICE_NAME: Smart Accounts API
+PORT: 3000
+CONTRACTS_FILE: ./contracts.json
+LOG_LEVELS:
+  LOG_LEVEL_SYSTEM: debug
+  LOG_LEVEL_FILE: info

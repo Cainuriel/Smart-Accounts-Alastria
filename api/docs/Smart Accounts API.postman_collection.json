@@ -1,0 +1,410 @@
+{
+	"info": {
+		"_postman_id": "a2878589-c407-4911-8c77-111967ee6701",
+		"name": "Smart Accounts API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37072370"
+	},
+	"item": [
+		{
+			"name": "Smart Account Factory",
+			"item": [
+				{
+					"name": "Create a new Smart Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{APIUrl}}/createAccount",
+							"host": [
+								"{{APIUrl}}"
+							],
+							"path": [
+								"createAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Smart Accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{APIUrl}}/getAccounts",
+							"host": [
+								"{{APIUrl}}"
+							],
+							"path": [
+								"getAccounts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Smart Accounts",
+			"item": [
+				{
+					"name": "ERC20",
+					"item": [
+						{
+							"name": "Get ERC20 Token Balance",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"args\": [\n        \"{{ERC20Address}}\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUrl}}/{{SmartAccountAddress}}/balanceERC20",
+									"host": [
+										"{{APIUrl}}"
+									],
+									"path": [
+										"{{SmartAccountAddress}}",
+										"balanceERC20"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get ERC20 Allowance",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"args\": [\n        \"{{ERC20Address}}\",\n        \"0x0000000000000000000000000000\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUrl}}/{{SmartAccountAddress}}/allowanceERC20",
+									"host": [
+										"{{APIUrl}}"
+									],
+									"path": [
+										"{{SmartAccountAddress}}",
+										"allowanceERC20"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Approve Address to Transfer ERC20 Tokens",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"args\": [\n        \"{{ERC20Address}}\",\n        \"0x0000000000000000000000000000\",\n        0\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUrl}}/{{SmartAccountAddress}}/approveERC20",
+									"host": [
+										"{{APIUrl}}"
+									],
+									"path": [
+										"{{SmartAccountAddress}}",
+										"approveERC20"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Transfer ERC20 Tokens",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"args\": [\n        \"{{ERC20Address}}\",\n        \"0x0000000000000000000000000000\",\n        0\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUrl}}/{{SmartAccountAddress}}/transferERC20",
+									"host": [
+										"{{APIUrl}}"
+									],
+									"path": [
+										"{{SmartAccountAddress}}",
+										"transferERC20"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ERC721",
+					"item": [
+						{
+							"name": "Get ERC721 Tokens",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"args\": [\n        \"{{ERC721Address}}\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUrl}}/{{SmartAccountAddress}}/balanceERC721",
+									"host": [
+										"{{APIUrl}}"
+									],
+									"path": [
+										"{{SmartAccountAddress}}",
+										"balanceERC721"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get if address is approved for all ERC721 transfers",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"args\": [\n        \"{{ERC721Address}}\",\n        \"0x0000000000000000000000000000\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUrl}}/{{SmartAccountAddress}}/isApprovedForAllERC721",
+									"host": [
+										"{{APIUrl}}"
+									],
+									"path": [
+										"{{SmartAccountAddress}}",
+										"isApprovedForAllERC721"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Approve Address to Transfer ERC721 Token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"args\": [\n        \"{{ERC721Address}}\",\n        \"0x0000000000000000000000000000\",\n        0\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUrl}}/{{SmartAccountAddress}}/approveERC721",
+									"host": [
+										"{{APIUrl}}"
+									],
+									"path": [
+										"{{SmartAccountAddress}}",
+										"approveERC721"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Approve Address to Transfer All ERC721 Tokens",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"args\": [\n        \"{{ERC721Address}}\",\n        \"0x0000000000000000000000000000\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUrl}}/{{SmartAccountAddress}}/approveAllERC721",
+									"host": [
+										"{{APIUrl}}"
+									],
+									"path": [
+										"{{SmartAccountAddress}}",
+										"approveAllERC721"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Disapprove Address from Transfering All ERC721 Tokens",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"args\": [\n        \"{{ERC721Address}}\",\n        \"0x0000000000000000000000000000\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUrl}}/{{SmartAccountAddress}}/removeApproveAllERC721",
+									"host": [
+										"{{APIUrl}}"
+									],
+									"path": [
+										"{{SmartAccountAddress}}",
+										"removeApproveAllERC721"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Transfer ERC721 Token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"args\": [\n        \"{{ERC721Address}}\",\n        \"0x0000000000000000000000000000\",\n        0\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APIUrl}}/{{SmartAccountAddress}}/transferERC721",
+									"host": [
+										"{{APIUrl}}"
+									],
+									"path": [
+										"{{SmartAccountAddress}}",
+										"transferERC721"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{api-key}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "X-API-Key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "APIUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "api-key",
+			"value": "EXAMPLE-API-KEY",
+			"type": "string"
+		},
+		{
+			"key": "SmartAccountAddress",
+			"value": "0x09BD29bc5BAFb150C8f8425Ef479C24DDce5047E",
+			"type": "string"
+		},
+		{
+			"key": "ERC20Address",
+			"value": "0xce7a46c3CA114633e4Bb45b3A75006a4E5dB47A2",
+			"type": "string"
+		},
+		{
+			"key": "ERC721Address",
+			"value": "0xb98E40c77beEBe9501aF1A2bDFFad922B6Bb30eE",
+			"type": "string"
+		}
+	]
+}
