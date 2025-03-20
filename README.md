@@ -35,3 +35,17 @@ The endpoints exposed by the API at `http://localhost:3000` can be used with [Po
 We have included a postman collection in `api/docs/Smart Accounts API.postman_collection.json` which already has all the calls prepared.  
 You will just have to configure the variables for the collection to add the correct API Key for the collection in the `current value` field.  
 You can find the API key if you compile this locally in `api/src/exposition/middleware/apiKey.middleware.ts`, or if you are using a version we deployed, you will have to get the API key directly from us.
+
+## Running Tests
+To run the tests, you need to configure the URL of the node, the private key, and ensure you have the ABI and bytecode for the contracts.
+
+Install the necessary dependencies:
+Create a .env file in the api directory (if it doesn't exist) and add the following configuration:
+Update api/contracts.json with the ABI and bytecode of the AccountFactory and Account contracts.
+
+Create the Jest configuration file jest.config.js in the api directory.
+
+### Run the tests:
+```sh
+npx jest
+```
