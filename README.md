@@ -38,6 +38,16 @@ You can find the API key if you compile this locally in `api/src/exposition/midd
 
 ## Running Tests
 To run the tests, you need to configure the URL of the node, the private key, and ensure you have the ABI and bytecode for the contracts.
+`api/src/_tests_/contract.service.test.ts`
+
+ beforeAll(() => {
+    logger = new Logger();
+    contracts = {}; // Add your contract collection here
+    config = {
+      NETWORK: {
+        WALLET_PRIV_KEY: 'your-private-key',
+        URL: 'http://localhost:8545'
+      }
 
 Install the necessary dependencies:
 Create a .env file in the api directory (if it doesn't exist) and add the following configuration:
