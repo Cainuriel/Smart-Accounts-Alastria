@@ -26,7 +26,7 @@ async function main() {
     console.log(`Deploying contract ${contractName} with parameters: ${params}...`);
     const deployResponse: BaseContract = await factory.deploy(...paramsParsed);
     console.log(`Contract ${contractName} deployed successfully!`);
-    storeAddressInfo(contractName, await deployResponse.getAddress());
+    storeAddressInfo(contractName, deployResponse.address);
   }
 
   console.log(`Saving contract addresses for ${hre.network.name}`);
